@@ -189,7 +189,7 @@ span::after {
 }
 
 .btn:hover {
-  background-color: #35a09c;
+  background-color: grey;
   color: #fff;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -228,4 +228,77 @@ header .holder .header_block nav ul li a {
   text-decoration: none;
   text-transform: uppercase;
   color: #000;
+}
+
+.introduction_block {
+  height: calc(100vh - 135px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.introduction_block .holder .intro_wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+}
+@media (min-width: 768px) {
+  .introduction_block .holder .intro_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.introduction_block .holder .intro_wrapper .intro_content_block h4 {
+  font-size: 20px;
+  padding: 20px 0;
+}
+.introduction_block .holder .intro_wrapper .intro_content_block .content_title h1 {
+  font-size: 3.4rem;
+}
+.introduction_block .holder .intro_wrapper .intro_content_block h3 {
+  font-size: 1.8rem;
+  padding: 5px 0 20px 0;
+}
+.introduction_block .holder .intro_wrapper .intro_content_block p {
+  padding: 20px 0;
+}
+.introduction_block .holder .intro_wrapper .intro_content_block .btn_block {
+  padding: 30px 0;
+}
+.introduction_block .holder .intro_wrapper .intro_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.introduction_block .holder .intro_wrapper .intro_img img {
+  width: 400px;
+  height: 400px;
+  border-radius: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 768px) {
+  .introduction_block .holder .intro_wrapper .intro_img img {
+    border-radius: 50%;
+  }
 }/*# sourceMappingURL=style.css.map */
