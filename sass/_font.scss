@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "Crimson Text";
+    src: url("../font/CrimsonText-Regular.eot");
+    src:
+        url("../font/CrimsonText-Regular.eot?#iefix") format("embedded-opentype"),
+        url("../font/CrimsonText-Regular.woff") format("woff"),
+        url("../font/CrimsonText-Regular.ttf") format("truetype"),
+        url("../font/CrimsonText-Regular.svg#CrimsonText-Regular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../font/Raleway-Regular.eot');
+    src: url('../font/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../font/Raleway-Regular.woff') format('woff'),
+        url('../font/Raleway-Regular.ttf') format('truetype'),
+        url('../font/Raleway-Regular.svg#Raleway-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

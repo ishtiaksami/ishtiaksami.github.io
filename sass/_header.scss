@@ -1,0 +1,32 @@
+header {
+    padding: 40px 0;
+    // box-shadow: 0 0 4px 1px gray;
+
+    .holder {
+        .header_block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            nav {
+
+                ul {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 50px;
+
+                    li {
+                        list-style: none;
+
+                        a {
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
