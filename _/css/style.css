@@ -196,7 +196,7 @@ span::after {
 }
 
 header {
-  padding: 40px 0;
+  padding: 30px 0;
 }
 header .holder .header_block {
   display: -webkit-box;
@@ -231,7 +231,6 @@ header .holder .header_block nav ul li a {
 }
 
 .introduction_block {
-  height: calc(100vh - 135px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,6 +240,7 @@ header .holder .header_block nav ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 60px 0;
 }
 .introduction_block .holder .intro_wrapper {
   display: grid;
@@ -263,7 +263,7 @@ header .holder .header_block nav ul li a {
   font-size: 3.4rem;
 }
 .introduction_block .holder .intro_wrapper .intro_content_block h3 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   padding: 5px 0 20px 0;
 }
 .introduction_block .holder .intro_wrapper .intro_content_block p {

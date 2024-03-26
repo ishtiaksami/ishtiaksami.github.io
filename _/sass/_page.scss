@@ -1,8 +1,8 @@
 .introduction_block {
-    height: calc(100vh - 135px);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 60px 0;
 
     .holder {
         .intro_wrapper {
@@ -31,7 +31,7 @@
                 }
 
                 h3 {
-                    font-size: 1.8rem;
+                    font-size: 1.7rem;
                     padding: 5px 0 20px 0;
                 }
 
