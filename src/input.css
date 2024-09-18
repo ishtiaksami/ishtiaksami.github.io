@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Satoshi";
+  src: url("/_/fonts/SatoshiMedium.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Urbanist";
+  src: url("/_/fonts/UrbanistRegular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("/_/fonts/UrbanistMedium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("/_/fonts/UrbanistSemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("/_/fonts/UrbanistBold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.holder {
+  @apply mx-auto px-8 md:px-16;
+}
+
+body {
+  @apply font-Satoshi;
+}
+
+@layer base {
+  h2 {
+    @apply text-4xl font-extrabold leading-none;
+  }
+  h3 {
+    @apply text-3xl font-extrabold leading-none text-white;
+  }
+  p {
+    @apply text-base md:text-lg font-normal leading-[160%];
+  }
+
+  .block-pad {
+    @apply py-8 md:py-[50px];
+  }
+
+  .hover-effect {
+    @apply relative after:content-[''] after:block after:w-0 after:absolute after:h-[2px] after:bg-white after:[transition:width_.3s] after:hover:w-full after:hover:bg-white after:right-0 after:[left:initial] hover:after:[right:initial] hover:after:left-0;
+  }
+
+  .button {
+    @apply text-black text-sm uppercase font-normal leading-[120%] tracking-[0.84px] inline-flex gap-3 items-center justify-between border border-solid border-black py-4 px-6 hover:bg-black hover:text-white hover:border hover:border-solid duration-500 min-w-[156px];
+  }
+
+  .button svg * {
+    transition: all 0.3s ease-in-out;
+  }
+  .button:hover svg path:first-child {
+    @apply fill-white;
+  }
+  .button:hover svg path:last-child {
+    @apply stroke-white;
+  }
+
+  .button.button-white {
+    @apply text-white border-white hover:bg-white hover:text-black;
+  }
+
+  .button.button-white:hover svg path:first-child {
+    @apply fill-black;
+  }
+  .button.button-white:hover svg path:last-child {
+    @apply stroke-black;
+  }
+
+  .btn-outline {
+    @apply border border-white rounded-3xl py-4 px-6 inline-flex items-center gap-6 uppercase text-sm font-normal tracking-[0.035rem] leading-none hover:text-black hover:bg-white transition-all duration-500;
+  }
+
+  .btn-outline:hover > svg > path {
+    @apply fill-black transition-all duration-500;
+  }
+}
