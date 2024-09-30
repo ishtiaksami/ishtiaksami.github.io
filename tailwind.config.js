@@ -4,13 +4,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Satoshi: ["Satoshi", "sans-serif"],
-        Urbanist: ["Urbanist",' sans-serif'],
+        Satoshi: ["Roboto", "sans-serif"],
+        obviously: ["Roboto", "sans-serif"],
       },
       spacing: {
         30: "1.875rem",
-      }
+      },
     },
   },
   plugins: [],
-}
+};
