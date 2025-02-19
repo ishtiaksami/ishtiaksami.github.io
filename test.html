@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Loader Animation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Inject Loader before page loads
+        document.write(`
+            <div id="loader" class="fixed inset-0 flex flex-col items-center justify-center bg-white transition-opacity duration-500 ease-out z-50">
+                <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+                <p id="loader-text" class="text-lg font-semibold text-gray-700">0%</p>
+            </div>
+        `);
+    </script>
+</head>
+<body class="overflow-hidden">
+    
+    <div id="content" class="hidden text-center p-12">
+        <h1 class="text-3xl font-bold">Welcome to My Website</h1>
+        <p class="mt-4 text-lg">This is the main content of the page.</p>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            let percentage = 0;
+            let interval = setInterval(function() {
+                if (percentage < 100) {
+                    percentage++;
+                    $("#loader-text").text(percentage + "%");
+                } else {
+                    clearInterval(interval);
+                }
+            }, 15);
+
+            $(window).on("load", function() {
+                setTimeout(function() {
+                    $("#loader").addClass("opacity-0");
+                    setTimeout(function() {
+                        $("#loader").hide();
+                        $("#content").removeClass("hidden");
+                    }, 500);
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>

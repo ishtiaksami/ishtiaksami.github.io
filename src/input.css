@@ -1,90 +1,148 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
-@font-face {
-  font-family: "Urbanist";
-  src: url("/_/fonts/UrbanistRegular.ttf") format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Urbanist";
-  src: url("/_/fonts/UrbanistMedium.ttf") format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Urbanist";
-  src: url("/_/fonts/UrbanistSemiBold.ttf") format("truetype");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Urbanist";
-  src: url("/_/fonts/UrbanistBold.ttf") format("truetype");
-  font-weight: 700;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.holder {
-  @apply mx-auto px-8 md:px-16;
-}
-
-body {
-  @apply font-Satoshi;
-}
-
 @layer base {
+  h1 {
+    @apply text-38 md:text-58 leading-[120%] font-normal;
+  }
   h2 {
-    @apply text-4xl font-extrabold leading-none;
+    @apply text-28 md:text-38 leading-[140%] font-normal;
   }
+
   h3 {
-    @apply text-3xl font-extrabold leading-none text-white;
+    @apply text-base leading-[120%] font-normal tracking-[0.8px];
   }
+
   p {
-    @apply text-base md:text-lg font-normal leading-[160%];
+    @apply text-base leading-[180%] font-light tracking-[0.36px];
+  }
+}
+
+@layer components {
+  body {
+    @apply font-inter;
+  }
+  .holder {
+    @apply mx-auto max-w-[94.5rem] px-7;
+  }
+}
+
+.btn {
+  @apply px-6 py-3 text-black border-2 border-black border-solid text-sm font-medium  transition-all duration-500 hover:bg-black hover:text-white;
+}
+
+.btn-white {
+  @apply px-6 py-3 text-white border-white border-solid border-2 font-medium transition-all duration-500 hover:bg-white hover:text-black text-sm;
+}
+.btn:hover > svg > path {
+  @apply fill-white transition-all duration-300;
+}
+.btn-white:hover > svg > path {
+  @apply fill-black transition-all duration-300;
+}
+
+header {
+  transition: background-color 0.3s ease;
+}
+
+/* Background color when menu is open */
+header.menu-open-bg {
+  @apply bg-black z-40;
+}
+header.menu-open-bg ul {
+  @apply border-t border-white;
+}
+
+.floating-header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  padding: 10px 0;
+}
+
+.mobile-menu-button span {
+  @apply block w-6 h-0.5 my-1.5;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.-rotate-45 {
+  transform: rotate(-45deg);
+}
+
+.translate-y-1.5 {
+  transform: translateY(6px); /* Adjust the value based on your button size */
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+/* Mobile Menu Hidden by default */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.menu-open-bg {
+  .holder > div {
+    @apply pb-8;
+  }
+}
+
+.menu-active > svg > path {
+  @apply fill-white transition-all duration-500;
+}
+
+.before-effect {
+  @apply relative inline-block before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[2px] before:bg-white before:scale-x-0 before:origin-right before:transition-transform before:duration-300 before:ease-in-out group-hover:before:origin-left group-hover:before:scale-x-100;
+}
+
+.cursor {
+  @apply w-[30px] h-[30px] absolute top-1/2 left-1/2 -translate-x-1/2 rounded-full border border-sky-400 bg-sky-400 pointer-events-none z-50 transition-all ease-out duration-200 animate-moveCursor1;
+}
+
+.expand {
+  @apply bg-transparent animate-moveCursor2 border border-yellow-400;
+}
+
+@keyframes moveCursor1 {
+  from {
+    transform: scale(1);
   }
 
-  .block-pad {
-    @apply py-8 md:py-[50px];
+  to {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes moveCursor2 {
+  0% {
+    transform: scale(1);
   }
 
-  .hover-effect {
-    @apply relative after:content-[''] after:block after:w-0 after:absolute after:h-[2px] after:bg-white after:[transition:width_.3s] after:hover:w-full after:hover:bg-white after:right-0 after:[left:initial] hover:after:[right:initial] hover:after:left-0;
+  50% {
+    transform: scale(2.5);
   }
 
-  .button {
-    @apply text-black text-sm uppercase font-normal leading-[120%] tracking-[0.84px] inline-flex gap-3 items-center justify-between border border-solid border-black py-4 px-6 hover:bg-black hover:text-white hover:border hover:border-solid duration-500 min-w-[156px];
-  }
-
-  .button svg * {
-    transition: all 0.3s ease-in-out;
-  }
-  .button:hover svg path:first-child {
-    @apply fill-white;
-  }
-  .button:hover svg path:last-child {
-    @apply stroke-white;
-  }
-
-  .button.button-white {
-    @apply text-white border-white hover:bg-white hover:text-black;
-  }
-
-  .button.button-white:hover svg path:first-child {
-    @apply fill-black;
-  }
-  .button.button-white:hover svg path:last-child {
-    @apply stroke-black;
-  }
-
-  .btn-outline {
-    @apply border border-white rounded-3xl py-4 px-6 inline-flex items-center gap-6 uppercase text-sm font-normal tracking-[0.035rem] leading-none hover:text-black hover:bg-white transition-all duration-500;
-  }
-
-  .btn-outline:hover > svg > path {
-    @apply fill-black transition-all duration-500;
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
 }
